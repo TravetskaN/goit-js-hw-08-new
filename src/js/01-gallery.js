@@ -1,25 +1,27 @@
 // Add imports above this line
-import { galleryItems } from "./gallery-items";
+import { galleryItems } from './gallery-items';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 // Change code below this line
 
-const galleryItemsEl = document.querySelector(".gallery");
-const galleryImg = (images) => {
+const galleryItemsEl = document.querySelector('.gallery');
+const galleryImg = images => {
   return images
     .map(({ preview, original, description }) => {
       return `<li><a class="gallery__item" href="${original}">
           <img class="gallery__image" src="${preview}" alt="${description}" title = "${description}" />
         </a></li>`;
     })
-    .join("");
+    .join('');
 };
 const imgCards = galleryImg(galleryItems);
-galleryItemsEl.insertAdjacentHTML("afterbegin", imgCards);
-galleryItemsEl.addEventListener("click", onImgClick);
+galleryItemsEl.insertAdjacentHTML('afterbegin', imgCards);
+galleryItemsEl.addEventListener('click', onImgClick);
 
-const lightbox = new SimpleLightbox(".gallery a", { captionDelay: 250 });
+const lightbox = new SimpleLightbox('.gallery a', { captionDelay: 250 });
 function onImgClick(event) {
   event.preventDefault();
-  if (event.target.nodeName !== "IMG") {
+  if (event.target.nodeName !== 'IMG') {
     return;
   }
   lightbox();
