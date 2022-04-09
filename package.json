@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://TravetskaN.github.io/goit-js-hw-08-new",
+  "homepage": "https://travetskan.github.io/goit-js-hw-08-new",
   "scripts": {
     "dev": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /goit-js-hw-08-new/"
